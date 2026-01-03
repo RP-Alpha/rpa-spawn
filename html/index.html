@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RP-Alpha Spawn</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+    <div id="app" class="hidden">
+        <div class="spawn-container">
+            <h1>Where would you like to wake up?</h1>
+            <div class="spawn-grid" id="spawn-grid">
+                <!-- Spawns injected here -->
+            </div>
+            <div class="last-location">
+                <button class="spawn-btn last-loc-btn" onclick="selectSpawn('last')">
+                    <i class="fa-solid fa-clock-rotate-left"></i>
+                    Last Location
+                </button>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
