@@ -18,7 +18,15 @@
 - 🎮 **NUI Selector** - Clean spawn location picker
 - 🎬 **Skycam** - Cinematic camera transition on spawn
 - 📍 **Last Location** - Option to spawn at previous logout position
+- 🔐 **Job-Restricted Spawns** - Limit spawns by job/permissions
 - ⚙️ **Configurable** - Easy to add custom spawn points
+
+---
+
+## 📦 Dependencies
+
+- `rpa-lib` (Required)
+- `rpa-appearance` (Recommended)
 
 ---
 
@@ -28,6 +36,7 @@
 2. Extract to your `resources` folder
 3. Add to `server.cfg`:
    ```cfg
+   ensure rpa-lib
    ensure rpa-spawn
    ```
 
@@ -35,13 +44,29 @@
 
 ## ⚙️ Configuration
 
-Edit `config.lua` to add spawn locations:
+### Spawn Locations
 
 ```lua
 Config.Spawns = {
-    { label = "City", coords = vector4(x, y, z, h) },
-    { label = "Airport", coords = vector4(x, y, z, h) }
+    ['mrpd'] = {
+        label = "Mission Row PD",
+        coords = vector4(428.23, -984.28, 29.76, 3.5),
+        image = "https://i.imgur.com/iqJ2wLF.png",
+        permissions = {
+            jobs = { 'police' },
+            groups = {},
+            minGrade = 0
+        }
+    },
+    ['legion'] = {
+        label = "Legion Square",
+        coords = vector4(215.8, -856.3, 30.1, 340.5),
+        image = "https://i.imgur.com/bTYmKbU.png",
+        permissions = nil  -- Available to everyone
+    }
 }
+
+Config.AllowLastLocation = true
 ```
 
 ---
