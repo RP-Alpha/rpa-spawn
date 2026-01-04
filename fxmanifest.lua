@@ -5,13 +5,18 @@ author 'RP-Alpha'
 description 'RP-Alpha Spawn Selector'
 version '1.0.0'
 
+dependencies {
+    'rpa-lib',
+    'rpa-appearance'
+}
+
 ui_page 'html/index.html'
 
 files {
     'html/index.html',
     'html/style.css',
     'html/script.js',
-    'html/map.jpg' -- Assuming a map image might be used, but implementing cleaner CSS first
+    'html/map.jpg'
 }
 
 shared_script 'config.lua'
